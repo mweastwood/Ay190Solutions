@@ -1,0 +1,42 @@
+\documentclass[preprint]{aastex}
+\usepackage{amsmath,amssymb,amsthm,amsfonts}
+\usepackage{breqn,flexisym} % break equations over multiple lines
+\usepackage{graphicx,float,stfloats}
+\usepackage{enumerate}
+\usepackage{bm}
+
+\pdfinfo{
+    /Title    (Ay190 Worksheet 2 -- Problem 3)
+    /Author   (Michael Eastwood)
+}
+
+\renewcommand{\b}{\boldsymbol}
+\renewcommand{\d}{{\rm d}}
+
+\begin{document}
+
+\title{Ay190 Worksheet 2 -- Problem 3}
+\author{Michael Eastwood}
+\email{mweastwood@astro.caltech.edu}
+\maketitle
+
+\section{Second Derivative}
+We begin by Taylor expanding:
+\begin{dgroup}
+\begin{dmath}
+    f(x+h) = f(x) + f'(x)h + \frac12 f''(x)h^2 + \frac16 f'''(x)h^3 + \mathcal{O}(h^4)
+\end{dmath}
+\begin{dmath}
+    f(x-h) = f(x) - f'(x)h + \frac12 f''(x)h^2 - \frac16 f'''(x)h^3 + \mathcal{O}(h^4)
+\end{dmath}
+\end{dgroup}
+Summing these equations, we find:
+\begin{dmath}
+    f(x+h) + f(x-h) = 2f(x) + f''(x)h^2 + \mathcal{O}(h^4)
+\end{dmath}
+So we have the second-order central finite difference approximation for $f''(x)$:
+\begin{dmath}\boxed{
+    f''(x) = \frac{1}{h^2}\Big(f(x+h) - 2f(x) + f(x-h)\Big) + \mathcal{O}(h^2)
+}\end{dmath}
+
+\end{document}
