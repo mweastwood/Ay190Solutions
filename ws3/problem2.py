@@ -35,13 +35,13 @@ for i in range(len(E_bins)-1):
     a = x_bins[i]; b = x_bins[i+1]
     transformed_integrand = lambda x: (b-a)/2*integrand((b-a)/2*x+(a+b)/2)
     integral = sum(legendre_weights*transformed_integrand(legendre_roots))
-    n_bins[i] = 8*pi*(kB*T)**3/(2*pi*hbar*c)**3 * integral / dE
-print 'The integral of the spectral distribution is %.4e/cm^3' % sum(n_bins*dE)
+    n_bins[i] = 8*pi*(kB*T)**3/(2*pi*hbar*c)**3 * integral / (dE*MeV_to_ergs)
+print 'The integral of the spectral distribution is %.4e/cm^3' % sum(n_bins*dE*MeV_to_ergs)
 
 figure()
 plot((E_bins[1:]+E_bins[:-1])/2,n_bins,'k-')
 xlabel(r'$E / {\rm MeV}$',fontsize=20)
-ylabel(r'${\rm d}n_{e^\pm}/{\rm d}E$',fontsize=20)
+ylabel(r'$\left({\rm d}n_{e^\pm}/{\rm d}E\right)/{\rm cm}^{-3}\,{\rm erg}^{-1}$',fontsize=20)
 savefig('problem2.pdf')
 close()
 
