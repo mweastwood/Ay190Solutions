@@ -7,8 +7,8 @@ def linear_regression(x,y,sigma=None):
     if sigma is None:
         sigma = ones(len(y))
 
-    sumx = sum(x/sigma)
-    sumy = sum(y/sigma)
+    sumx = sum(x/sigma**2)
+    sumy = sum(y/sigma**2)
     sumx2 = sum(x**2/sigma**2)
     sumxy = sum(x*y/sigma**2)
     s = sum(1/sigma**2)
