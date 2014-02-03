@@ -35,14 +35,14 @@ m1,b1 = linear_regression(x,y)
 
 # (c) Compute a linear regression fit (including errors)
 xerr = esigma/(log(10)*sigma)
-yerr = elogM**2
+yerr = elogM
 err  = sqrt(yerr**2 + (m1*yerr)**2)
 m2,b2 = linear_regression(x,y,err)
 
 # Plot the results
 figure(figsize=(6,6))
 t = linspace(min(x),max(x))
-errorbar(x,y,xerr=xerr,yerr=yerr,fmt='ko',capsize=0)
+errorbar(x,y,xerr=xerr,yerr=yerr,fmt='k.',capsize=0)
 plot(t,m1*t+b1,'r-',label='without errors')
 plot(t,m2*t+b2,'b-',label='including errors')
 legend(loc='best')
