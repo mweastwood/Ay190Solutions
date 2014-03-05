@@ -27,7 +27,9 @@ b[-1] -= y_boundary[1]/h**2
 # Solve
 y = solve(A,b)
 
-plot(x,y,'r-')
-plot(x,2*x**3-2*x**2+0.1*x,'k-')
+figure()
+plot(x,y,'r-',label='finite difference')
+plot(x,2*x**3-2*x**2+0.1*x,'k-',label='analytic solution')
+legend(loc='best')
 show()
 

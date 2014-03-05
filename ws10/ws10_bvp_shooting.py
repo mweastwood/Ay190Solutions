@@ -66,12 +66,9 @@ while (err > 1.0e-12 and i < itmax):
 
     print i,z1,phi1
 
-plt.plot(x,yy[:,0],"r-")
-plt.plot(x,2.0*x**3 - 2*x**2 + 0.1*x,"k-")
-#plt.plot(x,yy2[:,0],"b-")
-#plt.plot(x,yy3[:,0],"g-")
+plt.figure()
+plt.plot(x,yy[:,0],'r-',label='shooting method')
+plt.plot(x,2*x**3-2*x**2+0.1*x,'k-',label='analytic solution')
+plt.legend(loc='best')
 plt.show()
-
-
-
 
